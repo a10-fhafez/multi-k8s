@@ -15,7 +15,7 @@ before_install:
   - gcloud config set compute/zone us-east4-a
   - gcloud container clusters get-credentials multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t a10-fhafez/docker-react -f ./client/Dockerfile.dev ./client
+  - docker build -t a10-fhafez/react-test -f ./client/Dockerfile.dev ./client
 
 #script:
 #  - docker run -e CI=true a10-fhafez/docker-react npm run test
