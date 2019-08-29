@@ -1,3 +1,4 @@
+language: generic 
 sudo: required
 services:
   - docker
@@ -17,8 +18,8 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t a10-fhafez/react-test -f ./client/Dockerfile.dev ./client
 
-#script:
-#  - docker run -e CI=true a10-fhafez/docker-react npm run test
+script:
+  - docker run -e CI=true a10-fhafez/react-test npm test
 
 deploy:
   provider: script
